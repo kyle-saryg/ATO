@@ -1,10 +1,10 @@
 package main
 
 import (
-	"time"
+	"fmt"
 )
 
 func main() {
-	print("Hello there\n")
-	time.Sleep(10 * time.Second)
+	fmt.Print("Hello there\n")
+	server := NewAPIServer(":3000")
 }
