@@ -9,7 +9,13 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(digitalRead(floatSwitch));
+  int switchFlag = digitalRead(floatSwitch);
+  Serial.println(switchFlag);
+
+  if(switchFlag) {
+    Serial.println("Inside if");
+    digitalWrite(4, HIGH);
+  }
   delay(500);
 }
 
