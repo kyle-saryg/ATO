@@ -16,6 +16,8 @@ void loop() {
 
   if(switchFlag) {
     digitalWrite(4, HIGH);
+  } else {
+    digitalWrite(4, LOW);
   }
   delay(500);
 }
