@@ -8,6 +8,8 @@ void setup() {
   pinMode(floatSwitch, INPUT_PULLUP);
 }
 
+// Digital pin cannot supply enough current to power the peristaltic pump's dc motor
+// Need a relay, split into a power supply, connected to the peristaltic pump
 void loop() {
   int switchFlag = digitalRead(floatSwitch);
   Serial.println(switchFlag);
