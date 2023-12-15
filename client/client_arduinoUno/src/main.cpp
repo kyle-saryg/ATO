@@ -9,6 +9,7 @@ void setup() {
   Serial.begin(9600);
 
   pinMode(floatSwitchPin, INPUT_PULLUP);
+  pinMode(relayPin, OUTPUT);
 }
 
 // Digital pin cannot supply enough current to power the peristaltic pump's dc motor
