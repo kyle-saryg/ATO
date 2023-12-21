@@ -40,8 +40,8 @@ void loop() {
   if(switchFlag == 0) {
     digitalWrite(relayPin, HIGH);
     Serial.println(switchFlag);
-    // 1/4th of a cup
-    delay(450000);
+    // 1/4L at 5v
+    delay(700000);
   } else {
     digitalWrite(relayPin, LOW);
     Serial.println(switchFlag);
