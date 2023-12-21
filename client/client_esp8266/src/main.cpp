@@ -11,6 +11,13 @@ Relay: Normally Open
   Disconnected Float (True): CLOSED
 */
 
+
+/*
+  WeMos D1:
+    -- GPIO2 (Programmatical Reference) -> D4 (Physical Pinout)
+    -- GPIO4 (Programmatical Reference) -> D2 (Physical Pinout)
+*/
+
 // Wire float switch to pin 2
 // Connect other end to GND
 const int floatSwitchPin = 2;
