@@ -3,6 +3,7 @@
 // Wire float switch to pin 2
 // Connect other end to GND
 const int floatSwitchPin = 2;
+// Relay input on pin 4
 const int relayPin = 4;
 
 void setup() {
