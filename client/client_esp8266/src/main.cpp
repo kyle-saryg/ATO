@@ -41,7 +41,7 @@ void loop() {
     digitalWrite(relayPin, HIGH);
     Serial.println(switchFlag);
     // 1/4th of a cup
-    delay(100000);
+    delay(450000);
   } else {
     digitalWrite(relayPin, LOW);
     Serial.println(switchFlag);
