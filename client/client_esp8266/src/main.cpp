@@ -1,5 +1,16 @@
 #include <Arduino.h>
 
+/*
+Default: 1 (because of the internal pull-up resistor)
+
+Want: Relay to be disconnected
+  IF: Float switch is disconnected
+    TRUE when disconnected
+
+Relay: Normally Open
+  Disconnected Float (True): CLOSED
+*/
+
 // Wire float switch to pin 2
 // Connect other end to GND
 const int floatSwitchPin = 2;
@@ -19,7 +30,7 @@ void loop() {
   int switchFlag = digitalRead(floatSwitchPin);
   Serial.println(switchFlag);
 
-  if(switchFlag) {
+  if(switchFlag == 0) {
     digitalWrite(relayPin, HIGH);
     Serial.println(switchFlag);
   } else {
