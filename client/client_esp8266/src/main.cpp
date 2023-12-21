@@ -1,16 +1,6 @@
 #include <Arduino.h>
 
-/*
-Default: 1 (because of the internal pull-up resistor)
-
-Want: Relay to be disconnected
-  IF: Float switch is disconnected
-    TRUE when disconnected
-
-Relay: Normally Open
-  Disconnected Float (True): CLOSED
-*/
-
+void doseQuarterLiter();
 
 /*
   WeMos D1:
@@ -50,5 +40,5 @@ void loop() {
 void doseQuarterLiter() {
   digitalWrite(relayPin, HIGH);
   // 1/4L at 5v
-  delay(700000);
+  delay(610000);
 }
