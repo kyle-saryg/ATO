@@ -16,7 +16,6 @@ const int relayPin = 4;
 
 void setup() {
   Serial.begin(9600);
-
   pinMode(floatSwitchPin, INPUT_PULLUP);
   pinMode(relayPin, OUTPUT);
 }
