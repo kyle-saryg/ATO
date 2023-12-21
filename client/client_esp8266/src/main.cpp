@@ -20,8 +20,10 @@ void loop() {
 
   if(switchFlag) {
     digitalWrite(relayPin, HIGH);
+    Serial.println(switchFlag);
   } else {
     digitalWrite(relayPin, LOW);
+    Serial.println(switchFlag);
   }
   delay(500);
 }
