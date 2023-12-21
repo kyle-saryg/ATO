@@ -38,13 +38,17 @@ void loop() {
   int switchFlag = digitalRead(floatSwitchPin);
 
   if(switchFlag == 0) {
-    digitalWrite(relayPin, HIGH);
     Serial.println(switchFlag);
-    // 1/4L at 5v
-    delay(700000);
+    doseQuarterLiter();
   } else {
     digitalWrite(relayPin, LOW);
     Serial.println(switchFlag);
   }
   delay(500);
+}
+
+void doseQuarterLiter() {
+  digitalWrite(relayPin, HIGH);
+  // 1/4L at 5v
+  delay(700000);
 }
