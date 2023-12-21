@@ -34,12 +34,14 @@ void setup() {
 // Digital pin cannot supply enough current to power the peristaltic pump's dc motor
 // Need a relay, split into a power supply, connected to the peristaltic pump
 void loop() {
+  // Read water level
   int switchFlag = digitalRead(floatSwitchPin);
-  Serial.println(switchFlag);
 
   if(switchFlag == 0) {
     digitalWrite(relayPin, HIGH);
     Serial.println(switchFlag);
+    // 1/4th of a cup
+    delay(100000);
   } else {
     digitalWrite(relayPin, LOW);
     Serial.println(switchFlag);
