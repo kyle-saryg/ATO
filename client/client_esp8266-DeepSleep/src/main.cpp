@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <ESP8266WiFi.h>
 
 void doseQuarterLiter();
 
@@ -14,14 +15,21 @@ const int floatSwitchPin = 2;
 // Relay input on pin 4
 const int relayPin = 4;
 
+/*
+Sleep Duration calculations:
+ESP.deepSleep() takes in an integer representing the number of SECONDS to sleep
+*/
+const int sleepDurationInHours = 6;
+const int sleepDurationInSeconds = sleepDurationInHours * 60 * 60;
+
+
+
 void setup() {
   Serial.begin(9600);
   pinMode(floatSwitchPin, INPUT_PULLUP);
   pinMode(relayPin, OUTPUT);
 }
 
-// Digital pin cannot supply enough current to power the peristaltic pump's dc motor
-// Need a relay, split into a power supply, connected to the peristaltic pump
 void loop() {
   // Read water level
   int switchFlag = digitalRead(floatSwitchPin);
@@ -33,7 +41,7 @@ void loop() {
     digitalWrite(relayPin, LOW);
     Serial.println(switchFlag);
   }
-  delay(500);
+  ESP.deepSleep((sleepDurationInSeconds) * 1e6);
 }
 
 void doseQuarterLiter() {
